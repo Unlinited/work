@@ -1,0 +1,12 @@
+class Solution {
+public:
+    string restoreString(string s, vector<int>& indices) {
+        int length = s.length();//记录原先字符串的长度
+        string result(length, 0);//重新开辟一个新的字符串
+
+        for(int i = 0; i < length; i++) {
+            result[indices[i]] = s[i];//通过循环把原先字符串赋值
+        }
+        return result;
+    }
+};

@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+       int temp=0, n=matrix.size()-1;
+       for(int i=0;i<=n/2;i++){//外层循环控制圈
+           for(int j=i;j<n-i;j++){//内层循环控制旋转
+               temp=matrix[j][n-i];//注意旋转时数组是行变还是列变，以此来描述数组
+               matrix[j][n-i]=matrix[i][j];
+               matrix[i][j]=matrix[n-j][i];
+               matrix[n-j][i]=matrix[n-i][n-j];
+               matrix[n-i][n-j]=temp;
+           }
+       } 
+    }
+};
